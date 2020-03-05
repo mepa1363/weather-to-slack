@@ -1,0 +1,20 @@
+{
+  "name": "weather-to-slack",
+  "version": "0.1.0",
+  "description": "A slack bot for reporting weather updates everyday using wttr.in",
+  "author": "Abraham Poorazizi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-source-map-support": "^2.1.1",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.42.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

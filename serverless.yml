@@ -1,0 +1,27 @@
+service: weather-to-slack
+
+provider:
+  name: aws
+  region: us-west-2
+  runtime: nodejs12.x
+  memorySize: 128
+  timeout: 30
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+functions:
+  weather:
+    handler: handler.weather
+    events:
+      - schedule: cron(0 15 * * ? *)
+    environment:
+      SLACK_WEBHOOK_URL: ${opt:slack_url}
